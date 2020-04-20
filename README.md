@@ -27,6 +27,8 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]][license-url]
+[![Watch][watch-shield]][watch-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -175,16 +177,18 @@ Project Link: [https://github.com/github_username/repo](https://github.com/githu
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/mrabobi/semestudy.svg?style=flat-square
+[contributors-url]: https://github.com/mrabobi/semestudy/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/mrabobi/semestudy.svg?style=flat-square
+[forks-url]: https://github.com/mrabobi/semestudy/network/members
+[stars-shield]: https://img.shields.io/github/stars/mrabobi/semestudy.svg?style=flat-square
+[stars-url]: https://github.com/mrabobi/semestudy/stargazers
+[issues-shield]: https://img.shields.io/github/issues/mrabobi/semestudy.svg?style=flat-square
+[issues-url]: https://github.com/mrabobi/semestudy/issues
+[license-shield]: https://img.shields.io/github/license/mrabobi/semestudy.svg?style=flat-square
+[license-url]: https://github.com/mrabobi/semestudy/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://www.linkedin.com/in/mrobertandrei/
+[watch-shield]: https://img.shields.io/github/watchers/mrabobi/semestudy?style=social
+[watch-url]: https://github.com/mrabobi/semestudy
 [product-screenshot]: images/screenshot.png
