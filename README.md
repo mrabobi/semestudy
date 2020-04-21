@@ -143,8 +143,8 @@ Project Link: [https://github.com/mrabobi/semestudy](https://github.com/mrabobi/
 <!-- Coordinating Teacher -->
 ## Coordinating Teacher
 
-* [Cristian Frasinaru](https://profs.info.uaic.ro/~acf)
-* [Cusmuliuc Ciprian-Gabriel](https://www.linkedin.com/in/cipriancusmuliuc)
+* [Lect. Dr. Cristian Frasinaru](https://profs.info.uaic.ro/~acf)
+* [Colab. Cusmuliuc Ciprian-Gabriel](https://www.linkedin.com/in/cipriancusmuliuc)
 
 
 
