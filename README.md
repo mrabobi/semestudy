@@ -45,9 +45,10 @@
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
+* [Coordinating Teacher](#coordinating-teacher)
 * [License](#license)
 * [Contact](#contact)
-* [Coordinating Teacher](#coordinating-teacher)
+
 
 
 
@@ -56,9 +57,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo`, `twitter_handle`, `email`
+The project's meaning is to create a schedule for each education stage, be it university, highschool or primary. It is a flexible program wich allows the user to modify and view the result in real-time. Once the user is done and content with the outcome he can save the it in multiple ways(XML/PDF/JSON).
 
 
 ### Built With
@@ -123,6 +122,12 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
+<!-- Coordinating Teacher -->
+## Coordinating Teacher
+
+* [Lect. Dr. Cristian Frasinaru](https://profs.info.uaic.ro/~acf)
+* [Colab. Cusmuliuc Ciprian-Gabriel](https://www.linkedin.com/in/cipriancusmuliuc)
+
 
 <!-- LICENSE -->
 ## License
@@ -140,11 +145,7 @@ Project Link: [https://github.com/mrabobi/semestudy](https://github.com/mrabobi/
 
 
 
-<!-- Coordinating Teacher -->
-## Coordinating Teacher
 
-* [Lect. Dr. Cristian Frasinaru](https://profs.info.uaic.ro/~acf)
-* [Colab. Cusmuliuc Ciprian-Gabriel](https://www.linkedin.com/in/cipriancusmuliuc)
 
 
 
