@@ -62,8 +62,8 @@ The project's meaning is to create a schedule for each education stage, be it un
 
 ### Built With
 
-* [Java Swing](https://www.javatpoint.com/java-swing)
-* []()
+* [JavaFX](https://openjfx.io/)
+* [SceneBuilder](https://gluonhq.com/products/scene-builder/)
 * [Adobe Photoshop](https://www.photoshop.com/en)
 
 
