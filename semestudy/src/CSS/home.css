@@ -1,0 +1,29 @@
+.parent{
+    -fx-background-color: transparent;
+}
+.pane{
+    -fx-background-color: #27B9F2;
+}
+.trans-btn-white-border{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-border-color: #ADC5D9;
+    -fx-border-width: 2px;
+    -fx-text-fill: whitesmoke;
+    -fx-cursor: hand;
+}
+
+.white-pane{
+    -fx-background-color: #ffffff;
+}
+
+.blue-panel{
+    -fx-background-color: #024059;
+}
+
+.close-btn{
+    -fx-cursor: hand;
+    -fx-text-fill: #ADC5D9;
+    -fx-background-color: #024059;
+
+}
