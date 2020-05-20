@@ -54,7 +54,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Demo with the application](MediaFiles/demo.gif)
 
 The project's meaning is to create a schedule for each education stage, be it university, highschool or primary. It is a flexible program wich allows the user to modify and view the result in real-time. Once the user is done and content with the outcome he can save the it in multiple ways(XML/PDF/JSON).
 
