@@ -27,3 +27,11 @@
     -fx-background-color: #024059;
 
 }
+
+.connect-btn{
+    -fx-cursor: hand;
+    -fx-background-color: #27B9F2;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+}
+

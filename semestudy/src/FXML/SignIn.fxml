@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="360.0" styleClass="blue-panel" stylesheets="@../CSS/home.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeController">
    <children>
-      <Button mnemonicParsing="false" onAction="#closeButtonAction" styleClass="close-btn" translateX="160.0" translateY="-140.0">
+      <Button mnemonicParsing="false" onAction="#closeButtonAction" styleClass="close-btn" translateX="160.0" translateY="-130.0">
          <font>
             <Font name="FontAwesome" size="12.0" />
          </font>
@@ -21,5 +21,10 @@
             <Font size="48.0" />
          </font>
       </Label>
+      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="272.0" styleClass="connect-btn" stylesheets="@../CSS/home.css" text="CONNECT">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </VBox>

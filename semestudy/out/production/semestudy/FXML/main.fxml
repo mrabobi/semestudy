@@ -45,9 +45,9 @@
                   <Font name="Corbel" size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="122.0" fitWidth="147.0" layoutX="626.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="122.0" fitWidth="168.0" layoutX="623.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../media/logo.png" />
+                  <Image url="@../media/db.png" />
                </image>
             </ImageView>
             <VBox id="vbox" fx:id="vbox" layoutX="36.0" layoutY="-24.0" prefHeight="390.0" prefWidth="360.0" styleClass="white-pane" />
