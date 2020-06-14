@@ -35,3 +35,41 @@
     -fx-text-fill: white;
 }
 
+.tf_box{
+    -fx-background-color: transparent;
+    -fx-border-color: #27B9F2;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: #27B9F2;
+}
+
+.combo-box{
+    -fx-font-weight: bold;
+    -fx-background-color: #024059;
+    -fx-border-color: #27B9F2;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em;
+    -fx-fill: white;
+}
+
+.combo-box > .list-cell {
+    -fx-background: #024059;
+    -fx-background-color: #024059;
+    -fx-text-fill: #ADC5D9;
+}
+
+
+ .combo-box .arrow-button{
+    -fx-background-color: #024059;
+}
+.combo-box .arrow{
+    -fx-background-color: #27B9F2;
+}
+
+.tf{
+    -fx-background-color: #024059;
+}
+
+.text-field{
+    -fx-prompt-text-fill: white;
+}

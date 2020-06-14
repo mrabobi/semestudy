@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="424.0" styleClass="blue-panel" stylesheets="@../CSS/home.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AppController">
+   <children>
+      <Button mnemonicParsing="false" onAction="#closeButtonAction" styleClass="close-btn" translateX="190.0">
+         <font>
+            <Font name="FontAwesome" size="12.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="20" />
+         </graphic>
+      </Button>
+      <ImageView fitHeight="106.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/successfully.gif" />
+         </image>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <effect>
+            <Glow />
+         </effect>
+      </ImageView>
+      <Label alignment="CENTER" prefHeight="63.0" prefWidth="250.0" text="GENERATE YOUR SCHEDULE" textAlignment="CENTER" textFill="#27b9f2" wrapText="true">
+         <font>
+            <Font name="Corbel Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="376.0" spacing="15.0" styleClass="tf">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="COGS">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </FontAwesomeIconView>
+            <ComboBox fx:id="semesterComboBox" prefHeight="26.0" prefWidth="365.0" promptText="Please select the semester" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="376.0" styleClass="tf">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="FILE">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </FontAwesomeIconView>
+            <TextField fx:id="pathField" disable="true" prefHeight="26.0" prefWidth="262.0" promptText="Select folder to save the file" styleClass="tf_box" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="6.0" left="15.0" right="6.0" top="6.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#savePath" prefHeight="26.0" prefWidth="101.0" styleClass="connect-btn" stylesheets="@../CSS/home.css" text="CHOOSE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="6.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="50.0" styleClass="tf">
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" />
+         </VBox.margin>
+         <children>
+            <CheckBox mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#checkBoxXML" text="XML" textFill="#27b9f2" fx:id="xmlCheckbox">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="jsonCheckbox" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#checkBoxJSON" text="JSON" textFill="#27b9f2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </CheckBox>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#generateFile" prefHeight="26.0" prefWidth="272.0" styleClass="connect-btn" stylesheets="@../CSS/home.css" text="GENERATE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </Button>
+      <ImageView fitHeight="15.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/EverythingAboutLogo.png" />
+         </image>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </ImageView>
+   </children>
+</VBox>
