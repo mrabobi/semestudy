@@ -23,6 +23,7 @@ import java.util.List;
 
 public class Main extends Application {
 
+    private double posX,posY;
 
     @Override
     public void start(Stage stage) throws Exception{
@@ -33,34 +34,19 @@ public class Main extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("SemeStudy");
         stage.getIcons().add(new Image("/media/icon.png"));
+
+        root.setOnMousePressed(e -> {
+            posX = stage.getX() - e.getScreenX();
+            posY = stage.getY() - e.getScreenY();
+        });
+        root.setOnMouseDragged(e -> {
+            stage.setX(e.getScreenX() + posX);
+            stage.setY(e.getScreenY() + posY);
+        });
+
         stage.show();
         try {
             Database.getInstance("ORAR", "bobibi");
-//            ProfessorDAO professorDAO = new ProfessorDAO();
-//            Professor ls = professorDAO.getProfessor(687);
-//            System.out.println(ls.toString());
-
-//            List<Professor> professorList = professorDAO.getProfessors();
-//            for(Professor p : professorList){
-//                System.out.println(p.toString());
-//            }
-
-//            TimetableDAO timetableDAO = new TimetableDAO();
-//            Timetable timetable = timetableDAO.getTimetable(901);
-//            System.out.println(timetable.toString());
-
-//            List<Timetable> timetableList = timetableDAO.getTimetables();
-//            for (Timetable t : timetableList){
-//                System.out.println(t.toString());
-//            }
-
-            StudentDAO studentDAO = new StudentDAO();
-//            List<Student> studentList = studentDAO.getStudents();
-//
-//            for (Student s : studentList){
-//                System.out.println(s.toString());
-//            }
-
 
 
         }

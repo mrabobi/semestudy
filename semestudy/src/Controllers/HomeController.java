@@ -14,10 +14,15 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 public class HomeController {
+
+    private double posX,posY;
 
     public TextField usernameField;
 
@@ -37,6 +42,16 @@ public class HomeController {
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.setTitle("SemeStudy");
             stage.getIcons().add(new Image("/media/icon.png"));
+
+            root.setOnMousePressed(e -> {
+                posX = stage.getX() - e.getScreenX();
+                posY = stage.getY() - e.getScreenY();
+            });
+            root.setOnMouseDragged(e -> {
+                stage.setX(e.getScreenX() + posX);
+                stage.setY(e.getScreenY() + posY);
+            });
+
             stage.show();
 
         }
@@ -57,6 +72,16 @@ public class HomeController {
             }
 
         }
+    }
+
+    public void redirectToGithub() throws URISyntaxException, IOException {
+        Desktop desktop = Desktop.getDesktop();
+        desktop.browse(new URI("https://github.com/mrabobi/semestudy/blob/master/README.md"));
+    }
+
+    public void contactUs() throws URISyntaxException, IOException {
+        Desktop desktop = Desktop.getDesktop();
+        desktop.browse(new URI("https://github.com/mrabobi/semestudy/pulls"));
     }
 
     public void closeButtonAction(ActionEvent event) {

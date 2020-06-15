@@ -15,7 +15,7 @@ public class ActorDAO implements IActor {
 
     @Override
     public Actor getActor(int id) throws SQLException {
-        String query = "select a.id \"ID\" , a.name \"NAME\" , a.abbr \"ABBR\", p.name \"PREFIX\", a.leaf \"LEAF\", a.prof \"PROF\", a.stud \"STUD\" from actors a full outer join actorprefixes p on a.prefixid = p.id where a.id = ? and LEAF like 'Y'";
+        String query = "select a.id \"ID\" , a.name \"NAME\" , a.abbr \"ABBR\", p.name \"PREFIX\", a.leaf \"LEAF\", a.prof \"PROF\", a.stud \"STUD\" from actors a full outer join actorprefixes p on a.prefixid = p.id where a.id = ? and LEAF like 'Y' ";
         PreparedStatement preparedStatement = conn.prepareStatement(query);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();

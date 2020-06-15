@@ -51,6 +51,14 @@ public class Assignment {
         return endHour;
     }
 
+    public String getDay() {
+        return day;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
     public int getEventDuration(){
         return event.duration;
     }

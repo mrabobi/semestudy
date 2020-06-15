@@ -14,6 +14,30 @@ public class Event {
         this.eventType = eventType;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public String getAbbr() {
+        return abbr;
+    }
+
+    public String getRelatedActorsId() {
+        return relatedActorsId;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
+
     @Override
     public String toString() {
         return "Event{" +

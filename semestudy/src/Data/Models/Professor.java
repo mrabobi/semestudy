@@ -54,6 +54,22 @@ public class Professor {
         this.assignmentList = assignmentList;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getAbbr() {
+        return abbr;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public List<Assignment> getAssignmentList() {
+        return assignmentList;
+    }
+
     @Override
     public String toString() {
         String assignmentString = "";

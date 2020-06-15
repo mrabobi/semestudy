@@ -32,7 +32,7 @@
       </Label>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" translateY="50.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" styleClass="connect-btn" text="HOW TO USE" translateX="-15.0">
+            <Button mnemonicParsing="false" onAction="#redirectToGithub" prefHeight="26.0" prefWidth="100.0" styleClass="connect-btn" text="HOW TO USE" translateX="-15.0">
                <HBox.margin>
                   <Insets left="15.0" right="15.0" />
                </HBox.margin>
@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" styleClass="connect-btn" text="CONTACT" translateX="15.0" translateY="1.0">
+            <Button mnemonicParsing="false" onAction="#contactUs" prefHeight="26.0" prefWidth="100.0" styleClass="connect-btn" text="CONTACT" translateX="15.0" translateY="1.0">
                <HBox.margin>
                   <Insets left="15.0" right="15.0" />
                </HBox.margin>

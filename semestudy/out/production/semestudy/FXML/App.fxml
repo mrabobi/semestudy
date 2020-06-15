@@ -88,6 +88,11 @@
                   <Insets />
                </HBox.margin>
             </CheckBox>
+            <Button mnemonicParsing="false" onAction="#previewTimetable" styleClass="connect-btn" text="PREVIEW">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
             <CheckBox fx:id="jsonCheckbox" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#checkBoxJSON" text="JSON" textFill="#27b9f2">
                <font>
                   <Font name="System Bold" size="12.0" />

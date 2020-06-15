@@ -11,6 +11,8 @@ import javafx.util.Duration;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -76,5 +78,7 @@ public class MainController implements Initializable {
                 }
         );
     }
+
+
 
 }

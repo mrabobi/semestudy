@@ -33,6 +33,18 @@ public class Student {
         this.assignmentList = assignmentList;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getAbbr() {
+        return abbr;
+    }
+
+    public List<Assignment> getAssignmentList() {
+        return assignmentList;
+    }
+
     @Override
     public String toString() {
         String assignmentString = "";
@@ -43,6 +55,8 @@ public class Student {
                 assignmentString = assignmentString + " " + a.toString();
             }
         }
+
+
 
         return "Student{" +
                 "id=" + id +

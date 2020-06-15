@@ -73,6 +73,46 @@ public class Timetable {
 
     public int getId() { return id; }
 
+    public void setProfessorList(List<Professor> professorList) {
+        this.professorList = professorList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
+
+    public List<Professor> getProfessorList() {
+        return professorList;
+    }
+
+    public int getHourLength() {
+        return hourLength;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public String getPublish() {
+        return publish;
+    }
+
+    public LocalDate getBeginDate() {
+        return beginDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
     @Override
     public String toString() {
         return "Timetable{" +
@@ -81,10 +121,12 @@ public class Timetable {
                 ", hourLength=" + hourLength +
                 ", name='" + name + '\'' +
                 ", title='" + title + '\'' +
-                ", publish=" + publish +
+                ", domain='" + domain + '\'' +
+                ", publish='" + publish + '\'' +
                 ", beginDate=" + beginDate +
                 ", endDate=" + endDate +
+                ", professorList=" + professorList +
+                ", studentList=" + studentList +
                 '}';
     }
-
 }
