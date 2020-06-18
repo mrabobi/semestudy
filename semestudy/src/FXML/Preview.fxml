@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="403.0" styleClass="blue-panel" stylesheets="@../CSS/home.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PreviewController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="593.0" styleClass="blue-panel" stylesheets="@../CSS/home.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PreviewController">
    <children>
-      <HBox alignment="CENTER" prefHeight="316.0" prefWidth="403.0">
+      <HBox alignment="CENTER" prefHeight="316.0" prefWidth="570.0">
          <children>
-            <TreeView fx:id="treeView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="292.0" prefWidth="364.0" stylesheets="@../CSS/home.css" />
+            <TreeView fx:id="treeView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="316.0" prefWidth="555.0" stylesheets="@../CSS/home.css" />
          </children>
       </HBox>
       <Button mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="26.0" prefWidth="272.0" styleClass="connect-btn" stylesheets="@../CSS/home.css" text="CLOSE">

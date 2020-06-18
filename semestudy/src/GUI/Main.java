@@ -13,6 +13,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -26,7 +27,7 @@ public class Main extends Application {
     private double posX,posY;
 
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/main.fxml"));
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
@@ -45,18 +46,25 @@ public class Main extends Application {
         });
 
         stage.show();
-        try {
+
+
+      /*  try {
             Database.getInstance("ORAR", "bobibi");
-
-
-        }
-        catch (SQLException err){
-            if(err.getErrorCode() == 1017)
-                System.out.println("ID SI PASS GRES");
-            else
-                System.out.println("CONTACTATI ADMINI");
-        }
-
+        } catch (SQLException err) {
+            if (err.getErrorCode() == 1017) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("LogIn Failed");
+                alert.setContentText("Username or password invalid!");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("An error has occurred!");
+                alert.setContentText("Please contact support for help if this problem still appears!");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+            }
+        }*/
     }
 
     public static void main(String[] args) {
