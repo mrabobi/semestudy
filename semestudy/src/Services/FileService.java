@@ -15,9 +15,7 @@ import java.util.List;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -102,6 +100,36 @@ public class FileService {
         endDate.appendChild(document.createTextNode(timetable.getEndDate().toString()));
         root.appendChild(endDate);
 
+        //Announcements
+
+        Element announcementsElement = document.createElement("Announcements");
+        int count = 1;
+        List<Announcement> announcementList = timetable.getAnnouncementList();
+        for (Announcement announcement:announcementList){
+            Element ann = document.createElement("announce");
+            announcementsElement.appendChild(ann);
+            Attr attr = document.createAttribute("no");
+            attr.setValue(String.valueOf(count));
+            ann.setAttributeNode(attr);
+            count += 1;
+            Element headerElement = document.createElement("Title");
+            headerElement.appendChild(document.createTextNode(announcement.getHeader()));
+            ann.appendChild(headerElement);
+
+            Element messageAnn = document.createElement("Message");
+            messageAnn.appendChild(document.createTextNode(announcement.getMessage()));
+            ann.appendChild(messageAnn);
+
+            Element available = document.createElement("Available");
+            if(announcement.getEnd() != null)
+                available.appendChild(document.createTextNode(announcement.getEnd()));
+            else
+                available.appendChild(document.createTextNode("unknown"));
+            ann.appendChild(available);
+
+        }
+        root.appendChild(announcementsElement);
+
         //Students
         Element students = document.createElement("Students");
 
@@ -159,29 +187,6 @@ public class FileService {
         }
         root.appendChild(professors);
 
-        Element employee = document.createElement("employee");
-        root.appendChild(employee);
-
-        Attr attr = document.createAttribute("id");
-        attr.setValue("10");
-        employee.setAttributeNode(attr);
-
-
-        Element firstName = document.createElement("firstname");
-        firstName.appendChild(document.createTextNode("James"));
-        employee.appendChild(firstName);
-
-        Element lastname = document.createElement("lastname");
-        lastname.appendChild(document.createTextNode("Harley"));
-        employee.appendChild(lastname);
-
-        Element email = document.createElement("email");
-        email.appendChild(document.createTextNode("james@example.org"));
-        employee.appendChild(email);
-
-        Element department = document.createElement("department");
-        department.appendChild(document.createTextNode("Human Resources"));
-        employee.appendChild(department);
 
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -194,6 +199,20 @@ public class FileService {
 
         showAlert("File generated successfully!", Alert.AlertType.INFORMATION);
 
+    }
+
+    public static JSONArray generateAnnouncementJson(List<Announcement> announcementList){
+        JSONArray jsonArray = new JSONArray();
+        for(Announcement announcement : announcementList) {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("Header", announcement.getHeader());
+            jsonObject.put("Message", announcement.getMessage());
+            jsonObject.put("End", announcement.getEnd());
+            jsonArray.add(jsonObject);
+        }
+
+
+        return  jsonArray;
     }
 
     public static JSONObject generateProfJson(List<Professor> profList){
@@ -221,7 +240,7 @@ public class FileService {
                         oraDetails.put("Beginning", assignment.getStartHour().toString());
                         oraDetails.put("Ending",assignment.getEndHour().toString());
                         oraDetails.put("Resources", assignment.getResources());
-
+                        oraDetails.put("Actors", assignment.getRelatedActors());
                         ora.put(event.getName(), oraDetails);
                         tasks.add(ora);
                     }
@@ -238,9 +257,10 @@ public class FileService {
             }
 
             details.add(name);
-            details.add(orar);
+//            details.add(orar);
             profJson.put(professor.getId(),details);
         }
+
         return profJson;
     }
 
@@ -255,6 +275,7 @@ public class FileService {
 
             name.put("Name",student.getName());
             name.put("ORAR", orar);
+            name.put("id", student.getId());
 
 
             HashMap<Integer,String> days = DBService.addDays();
@@ -270,6 +291,7 @@ public class FileService {
                         oraDetails.put("Beginning", assignment.getStartHour().toString());
                         oraDetails.put("Ending",assignment.getEndHour().toString());
                         oraDetails.put("Resources", assignment.getResources());
+                        oraDetails.put("Actors", assignment.getRelatedActors());
 
                         ora.put(event.getName(), oraDetails);
                         tasks.add(ora);
@@ -282,22 +304,16 @@ public class FileService {
 
 
             details.add(name);
-            details.add(orar);
             studJson.put(student.getAbbr(),details);
         }
+
         return studJson;
     }
 
 
     public static void exportJSON(Timetable timetable, String path) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("Title", timetable.getTitle());
-        jsonObject.put("Domain",timetable.getDomain());
-        jsonObject.put("Publish",timetable.getPublish());
-        jsonObject.put("BeginDate", timetable.getBeginDate().toString());
-        jsonObject.put("EndDate",timetable.getEndDate().toString());
-
-
+        List<Announcement> announcements = timetable.getAnnouncementList();
         List<Professor> profList = timetable.getProfessorList();
         profList.sort(Comparator.comparing(Professor::getName));
         JSONObject profJson = generateProfJson(profList);
@@ -307,7 +323,14 @@ public class FileService {
         List<Student> studentList = timetable.getStudentList();
         studentList.sort(Comparator.comparing(Student::getAbbr));
         JSONObject studJson = generateStudJson(studentList);
+        JSONObject announcementJson = new JSONObject();
         jsonObject.put("Students", studJson);
+        jsonObject.put("Announcements", generateAnnouncementJson(announcements));
+        jsonObject.put("Title", timetable.getTitle());
+        jsonObject.put("Domain",timetable.getDomain());
+        jsonObject.put("Publish",timetable.getPublish());
+        jsonObject.put("BeginDate", timetable.getBeginDate().toString());
+        jsonObject.put("EndDate",timetable.getEndDate().toString());
 
 
         try (FileWriter file = new FileWriter(path+"\\semestudy_export.json")) {

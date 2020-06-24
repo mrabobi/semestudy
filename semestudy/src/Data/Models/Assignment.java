@@ -59,6 +59,10 @@ public class Assignment {
         return event;
     }
 
+    public String getRelatedActors(){
+        return event.getRelatedActorsId();
+    }
+
     public int getEventDuration(){
         return event.duration;
     }

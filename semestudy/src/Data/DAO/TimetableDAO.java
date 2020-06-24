@@ -1,15 +1,12 @@
 package Data.DAO;
 
 import Data.Database;
-import Data.Models.Professor;
 import Data.Models.Timetable;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 

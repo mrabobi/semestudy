@@ -28,7 +28,6 @@ public class Database {
         } else if (getConnection().isClosed()) {
             instance = new Database(username, password);
         }
-
         return instance;
     }
 

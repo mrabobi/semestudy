@@ -94,6 +94,20 @@ public class PreviewController implements Initializable {
             treeProfessors.getChildren().add(prof);
         }
 
+        TreeItem<String> announcementsTree = new TreeItem<>("Announcements");
+        List<Announcement> announcementList = timetable.getAnnouncementList();
+        int counting = 1;
+        for(Announcement announcement : announcementList) {
+            TreeItem<String> ann = new TreeItem<>(String.valueOf(counting));
+            counting += 1;
+            TreeItem<String> header = new TreeItem<>("Header: " + announcement.getHeader());
+            TreeItem<String> message = new TreeItem<>("Message: " + announcement.getMessage());
+            TreeItem<String> end = new TreeItem<>("Available: " + announcement.getEnd());
+            ann.getChildren().addAll(header, message, end);
+            announcementsTree.getChildren().add(ann);
+        }
+
+
 
         //ForStudents
         TreeItem<String> treeStudents = new TreeItem<>("Students");
@@ -111,7 +125,7 @@ public class PreviewController implements Initializable {
         }
 
         treeItem.getChildren().addAll(treeItemId, treeItemDomain, treeItemPublish,
-                treeItemBeginDate, treeItemEndDate, treeProfessors, treeStudents);
+                treeItemBeginDate, treeItemEndDate, treeProfessors, treeStudents, announcementsTree);
 
 
     }

@@ -8,11 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,21 +21,7 @@ public class MainController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TranslateTransition translateTransition =  new TranslateTransition(Duration.seconds(0.7), vbox);
-        translateTransition.setToX(0);
-        translateTransition.play();
-        translateTransition.setOnFinished(
-                e->{
-                    try {
-                        fxml = FXMLLoader.load(getClass().getResource("../FXML/Home.fxml"));
-                        vbox.getChildren().removeAll();
-                        vbox.getChildren().setAll(fxml);
-                    }
-                    catch (IOException ex){
-
-                    }
-                }
-        );
+        showHomeFXML(null);
     }
 
 
@@ -78,7 +60,6 @@ public class MainController implements Initializable {
                 }
         );
     }
-
 
 
 }

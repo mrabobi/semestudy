@@ -1,26 +1,15 @@
 package GUI;
 
-import Data.DAO.EventDAO;
-import Data.DAO.ProfessorDAO;
-import Data.DAO.StudentDAO;
-import Data.DAO.TimetableDAO;
-import Data.Database;
-import Data.Models.Event;
-import Data.Models.Professor;
-import Data.Models.Student;
-import Data.Models.Timetable;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.sql.SQLException;
-import java.util.List;
 
 public class Main extends Application {
 

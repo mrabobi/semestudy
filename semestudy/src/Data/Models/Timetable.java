@@ -13,6 +13,7 @@ public class Timetable {
     LocalDate beginDate, endDate;
     List<Professor> professorList;
     List<Student> studentList;
+    List<Announcement> announcementList;
 
 
     public Timetable(){
@@ -81,8 +82,16 @@ public class Timetable {
         this.studentList = studentList;
     }
 
+    public void setAnnouncementList(List<Announcement> announcementList) {
+        this.announcementList = announcementList;
+    }
+
     public List<Professor> getProfessorList() {
         return professorList;
+    }
+
+    public List<Announcement> getAnnouncementList() {
+        return announcementList;
     }
 
     public int getHourLength() {

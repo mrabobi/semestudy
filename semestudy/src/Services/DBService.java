@@ -1,6 +1,7 @@
 package Services;
 
 import Data.DAO.ActorDAO;
+import Data.DAO.AnnouncementDAO;
 import Data.DAO.AssignmentDAO;
 import Data.DAO.TimetableDAO;
 import Data.Models.*;
@@ -82,13 +83,14 @@ public class DBService {
 
             AssignmentDAO assignmentDAO = new AssignmentDAO();
             ActorDAO actorDAO = new ActorDAO();
+            AnnouncementDAO announcementDAO = new AnnouncementDAO();
+            primaryTimetable.setAnnouncementList(announcementDAO.getAnnouncements(semesterId));
             List<Assignment> assignmentList = assignmentDAO.getAssignments(semesterId);
             assignmentList = DBService.setDateTime(primaryTimetable.getHours(), assignmentList);
 
             for (Assignment a : assignmentList) {
                 if (a.getEventRelatedActorsId() != null) {
                     List<String> actorLists = DBService.generateActorLists(a.getEventRelatedActorsId());
-                    String test = " ";
                     if (!actorLists.contains("null")) {
                         for (String actorId : actorLists) {
 
@@ -129,6 +131,7 @@ public class DBService {
             else {
                 primaryTimetable.setProfessorList(new LinkedList<>(professorHashMap.values()));
                 primaryTimetable.setStudentList(new LinkedList<>(studentHashMap.values()));
+
                 return primaryTimetable;
             }
 
@@ -151,7 +154,7 @@ public class DBService {
         List<Assignment> assignments = new LinkedList<>();
 
         for (Assignment assignment : assignmentList) {
-            if(assignment.getDay() == day)
+            if(assignment.getDay().equals(day))
                 assignments.add(assignment);
         }
 
