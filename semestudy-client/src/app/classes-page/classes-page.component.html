@@ -1,0 +1,21 @@
+<div *ngIf="schedule !== undefined ; else elseBlock" >
+    <h1 class ="header-title">Sali de curs si laboratoare</h1>
+    <h1 class="second-title">Publicat: {{schedule['Publish']}}</h1>
+
+    <div class = "parent">
+      
+        <ng-container *ngFor = "let clasa of getClassrooms()">
+       
+            <a routerLink="/classrooms/{{clasa}}" ><p class="studentBtn"> {{clasa}}</p> </a> 
+        </ng-container>
+
+    </div>
+    
+
+</div>
+
+<ng-template #elseBlock>
+    <div class="bug-picture">
+        <img src="./assets/wrong.png">
+    </div>    
+    </ng-template>

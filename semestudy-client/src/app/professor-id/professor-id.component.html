@@ -1,0 +1,130 @@
+<div *ngIf="professors !== undefined " >
+    <div *ngIf="professors[profId] !== undefined ; else elseBlock">
+    <h1 class ="header-title">{{professors[profId][0]['Grad']}} {{professors[profId][0]['Name']}}</h1>
+    <h1 class="second-title">Publicat: {{schedule['Publish']}}</h1>
+    
+    
+    <div class="container">
+    <table style="width: 50% border= 1px">
+        <thead>
+            <tr>
+            <th>Interval</th>
+            <th style="text-align: left;">Disciplina</th>
+            <th>Tip</th>
+            <th>Studenti</th>
+            <th>Sala</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+        <ng-container *ngFor = "let day of week | keyvalue">
+            <td colspan="10" style="text-align: center; background: #4951F2; color: white;">{{day.value}}</td>
+        
+            <ng-container *ngFor = "let orar of professors[profId][0]['ORAR'][day.key][day.value] | keyvalue">
+                <ng-container *ngFor="let ora of orar.value | keyvalue ">
+                    <ng-container *ngIf="! (ora.value['Type'] == 'Partial' || ora.value['Type'] == 'Sesiune')">
+                        <tr>
+                            <td>
+                                {{ora.value['Beginning'] }} - {{ora.value['Ending']}} 
+                            </td>
+                            <td class = "materie">
+                                {{ora.key}}
+                            </td> 
+                            <td>
+                                {{ora.value['Type']}}
+                            </td>
+                            <td>
+                                <div class="classrooms">
+                                    <ng-container *ngFor = "let item of splitString(ora.value['Actors'])">
+                                        <a *ngIf="existStudent(item) == true" [routerLink]="['/students', classId]" style="margin-left: 5px;">{{classId}}</a>
+                                    </ng-container>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="classrooms">
+                                    <ng-container *ngFor = "let item of splitString(ora.value['Resources'])">
+                                        <a [routerLink]="['/classrooms', item]" style="margin-left: 5px;">{{item}}</a>
+                                    </ng-container>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+           
+            </ng-container>
+            <tr>
+                <td></td>   <td></td> <td></td>  <td></td>  <td></td> 
+            </tr>
+        </ng-container>
+    
+        <td colspan="10" class = "border-bottom" style="text-align: center; background: #024059; color: #024059;">.</td>
+        
+       
+    </tbody>
+    </table>
+    <h1 class="second-title">Exams</h1>
+    <table style="width: 50% border= 1px ">
+        <thead>
+            <tr style="background: #B22222;">
+            <th>Interval</th>
+            <th style="text-align: left;">Disciplina</th>
+            <th>Tip</th>
+            <th>Studenti</th>
+            <th>Sala</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+        <ng-container *ngFor = "let day of week | keyvalue">
+            <td colspan="10" style="text-align: center; background: #ed2939; color: white;">{{day.value}}</td>
+        
+            <ng-container *ngFor = "let orar of professors[profId][0]['ORAR'][day.key][day.value] | keyvalue">
+                <ng-container *ngFor="let ora of orar.value | keyvalue ">
+                    <ng-container *ngIf=" (ora.value['Type'] == 'Partial' || ora.value['Type'] == 'Sesiune')">
+                        <tr>
+                            <td>
+                                {{ora.value['Beginning'] }} - {{ora.value['Ending']}} 
+                            </td>
+                            <td class = "materie">
+                                {{ora.key}}
+                            </td> 
+                            <td>
+                                {{ora.value['Type']}}
+                            </td>
+                            <td>
+                                <div class="classrooms">
+                                    <ng-container *ngFor = "let item of splitString(ora.value['Actors'])">
+                                        <a *ngIf="existStudent(item) == true" [routerLink]="['/students', classId]" style="margin-left: 5px;">{{classId}}</a>
+                                    </ng-container>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="classrooms">
+                                    <ng-container *ngFor = "let item of splitString(ora.value['Resources'])">
+                                        <a [routerLink]="['/classrooms', item]" style="margin-left: 5px;">{{item}}</a>
+                                    </ng-container>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+           
+            </ng-container>
+            <tr>
+                <td></td>   <td></td> <td></td> <td></td>  <td></td> 
+            </tr>
+        </ng-container>
+    
+        <td colspan="10" class = "border-bottom" style="text-align: center; background: #B22222; color: #ed2939;">.</td>
+        
+       
+    </tbody>
+    </table>
+    </div>
+</div>
+    <ng-template #elseBlock>
+    <div class="bug-picture">
+        <img src="./assets/wrong.png">
+    </div>    
+    </ng-template>
+</div>

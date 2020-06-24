@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans';
+    background: #0090c9;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-size: 24px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header-title{
+    color: #111; font-family: 'Open Sans Condensed', sans-serif;
+     font-size: 64px; font-weight: 700; 
+     line-height: 64px; margin: 0 0 0; 
+     padding: 20px 30px; 
+     text-align: center; 
+     text-transform: uppercase;
+     text-shadow: 2px 2px white;
+}
+
+.second-title{
+  color: #111; font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 18px; font-weight: 700; 
+   line-height: 64px; margin: 0 0 0; 
+   padding: 20px 30px; 
+   text-align: center; 
+   text-transform: uppercase;
+   text-shadow: 0.5px 0.5px white;
+}
+
+.studentBtn {
+    padding: 20px;
+    border: 4px solid #024059 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    font-weight: bold;
+    margin: 3px;
+    }
+
+.studentBtn:hover {
+      transition: all 0.4s ease 0s;
+      font-weight: bold;
+      color: #ffffff !important;
+      background: #024059;
+      border-color: #024059 !important;
+     
+      }
+
+.bug-picture{
+    text-align: center;
+}

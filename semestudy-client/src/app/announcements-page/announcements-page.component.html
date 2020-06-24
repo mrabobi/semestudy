@@ -1,0 +1,26 @@
+<h1 class = "header-title"> Anunturi administrative</h1>
+
+
+
+
+
+<div class="w3-container">
+    <ul class="w3-ul w3-card-4" style="background: rgba(255,255,255,0.6);">
+
+
+<ng-container *ngFor="let announce of announcements | keyvalue">
+
+      <li class="w3-bar">
+        <div class="w3-bar-item">
+          <span class="w3-large">{{announce.value['Header']}}</span><br>
+          <span>{{announce.value['Message']}}</span>
+        </div>
+        <ng-container *ngIf="announce.value['End'] !== null">
+          <p style="text-align: right">Valabil pana pe {{announce.value['End']}}</p>
+      </ng-container>
+      </li>
+   
+</ng-container>
+
+</ul>
+</div>

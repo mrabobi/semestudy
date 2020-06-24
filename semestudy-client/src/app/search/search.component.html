@@ -1,0 +1,12 @@
+<ng-container *ngIf="schedule !== undefined">
+
+<div *ngIf="input;else elseBlock"><h1>Redirecting...</h1></div>
+    
+<ng-template #elseBlock>
+    <div class="bug-picture">
+        <img src="./assets/wrong.png">
+    </div>    
+</ng-template>
+</ng-container>
+
+<p>{{redirectSearch()}}</p>

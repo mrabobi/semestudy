@@ -1,0 +1,71 @@
+<div *ngIf="professors !== undefined ; else elseBlock" >
+    <h1 class ="header-title">Sala {{classId}}</h1>
+    <h1 class="second-title">Publicat: {{schedule['Publish']}}</h1>
+
+
+
+<div class="container">
+    <table style="width: 50% border= 1px">
+        <thead>
+            <tr>
+            <th>Interval</th>
+            <th style="text-align: left;">Disciplina</th>
+            <th>Tip</th>
+            <th>Studenti</th>
+            <th>Profesori</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+        <ng-container *ngFor = "let day of week | keyvalue">
+            <td colspan="10" style="text-align: center; background: #4951F2; color: white;">{{day.value}}</td>
+            <ng-container *ngFor="let profId of professors | keyvalue">
+                <ng-container *ngFor = "let orar of professors[profId.key][0]['ORAR'][day.key][day.value] | keyvalue">
+                    <ng-container *ngFor="let ora of orar.value | keyvalue ">
+                        <ng-container *ngIf="ora.value['Resources']!== null && existSubstring(ora.value['Resources'], classId) == true">
+                            <tr>
+                                <td>
+                                    {{ora.value['Beginning'] }} - {{ora.value['Ending']}} 
+                                </td>
+                                <td class = "materie">
+                                    {{ora.key}}
+                                </td> 
+                                <td>
+                                    {{ora.value['Type']}}
+                                </td>
+                                <td>
+                                    <div class="classrooms">
+                                        <ng-container *ngFor = "let item of splitString(ora.value['Actors'])">
+                                            <a *ngIf="existStudent(item) == true" [routerLink]="['/students', studId]" style="margin-left: 5px;">{{studId}}</a>
+                                        </ng-container>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="classrooms">
+                                            <a [routerLink]="['/professors', profId.key]" style="margin-left: 5px;">{{profId.value[0]['Grad']}}{{profId.value[0]['Name']}}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <tr>
+                <td></td>   <td></td> <td></td>  <td></td>  <td></td> 
+            </tr>
+        </ng-container>
+    
+        <td colspan="10" class = "border-bottom" style="text-align: center; background: #024059; color: #024059;">.</td>
+        
+       
+    </tbody>
+    </table>
+    
+    </div>
+
+</div>
+<ng-template #elseBlock>
+    <div class="bug-picture">
+        <img src="./assets/wrong.png">
+    </div>    
+</ng-template>

@@ -1,0 +1,15 @@
+<div *ngIf="schedule !== undefined" >
+<h1 class = "header-title"> Orarul pentru studenti</h1>
+<h1 class="second-title">Publicat: {{schedule['Publish']}}</h1>
+   
+        <div class = "parent">
+      
+        <ng-container *ngFor = "let stud of students | keyvalue">
+            
+               <a routerLink="/students/{{stud.key}}" ><p class="studentBtn"> {{stud.key}}</p> </a> 
+        </ng-container>
+
+    </div>
+   
+
+</div>

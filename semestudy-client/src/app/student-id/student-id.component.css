@@ -1,0 +1,78 @@
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 15px;
+    text-align: center;
+  
+  }
+  table * {
+    position: relative;
+  }
+  table td, table th {
+    padding-left: 8px;
+  }
+  table thead tr {
+    height: 60px;
+    background: #024059;
+    color: white;
+  }
+  table tbody tr {
+    height: 50px;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  
+  .materie{
+      text-align: left;
+  }
+ 
+  
+  
+  .table100-head th{
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tbody tr {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  .container{
+	margin: 4% 5% 0 5%;
+
+}
+
+.border-bottom::selection{
+  color: #024059;
+}
+.classrooms{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 255px;
+    text-align: center;
+    margin: 0 auto;
+}

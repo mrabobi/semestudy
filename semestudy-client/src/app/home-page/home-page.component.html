@@ -1,0 +1,39 @@
+
+<div class = "page-container">
+    <div class="sidebar">
+        <div class = "list-items">
+            <a routerLink="" routerLinkActive="selected" class=list-item>
+                <i class="material-icons">home</i>
+                Acasa
+            </a>
+            <a routerLink = "/announcements" routerLinkActive="selected" class=list-item>
+                <i class="material-icons">error_outline</i>
+                Anunturi
+            </a>
+            <a routerLink = "/students" routerLinkActive="selected" class=list-item>
+                <i class="material-icons">school</i>
+                Studenti
+            </a>
+            <a routerLink = "/professors" routerLinkActive="selected" class=list-item>
+                <i class="material-icons">person_pin</i>
+                Profesori
+            </a>
+            <a routerLink = "/classrooms" routerLinkActive="selected" class=list-item>
+                <i class="material-icons">pin_drop</i>
+                Sali de curs
+            </a>
+         
+
+            <a  routerLinkActive="selected" class=list-item>
+                <i [routerLink]="['/search', searchedValue]" routerLinkActive="selected" style="user-select: none;" class="material-icons">search</i>
+                <input style="width: 180px;" class="form-control mr-sm-2" type="text" placeholder="Cauta" name="searchValued" [(ngModel)]="searchedValue"  >
+            </a>
+
+        </div>
+    </div>
+    <div class="page-content-container">
+        <router-outlet></router-outlet>
+    </div>
+  
+</div>
+
