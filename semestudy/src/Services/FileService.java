@@ -75,11 +75,8 @@ public class FileService {
     }
 
     public static void exportXML(Timetable timetable, String path) throws ParserConfigurationException, TransformerException {
-
         DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
-
         DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
-
         Document document = documentBuilder.newDocument();
 
         Element root = document.createElement("schedule");
@@ -318,7 +315,6 @@ public class FileService {
         profList.sort(Comparator.comparing(Professor::getName));
         JSONObject profJson = generateProfJson(profList);
         jsonObject.put("Professors", profJson);
-
 
         List<Student> studentList = timetable.getStudentList();
         studentList.sort(Comparator.comparing(Student::getAbbr));

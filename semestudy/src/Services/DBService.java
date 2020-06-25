@@ -72,10 +72,8 @@ public class DBService {
     }
 
     public static Timetable generateTimetable(int semesterId){
-
         HashMap<Integer, Professor> professorHashMap = new HashMap<>();
         HashMap<Integer, Student> studentHashMap = new HashMap<>();
-
         try {
 
             TimetableDAO timetableDAO = new TimetableDAO();

@@ -28,12 +28,12 @@ export class ClassesPageComponent implements OnInit {
   getClassrooms(){
     var days = this.generateMap();
     var elems = []
-    for(let key in this.students){
+    for(let key in this.professors){
       for(let day of days.keys()){
-        for(let materii in this.students[key][0]['ORAR'][day][days.get(day)]){
-          for(let materie in this.students[key][0]['ORAR'][day][days.get(day)][materii])
-            if(this.students[key][0]['ORAR'][day][days.get(day)][materii][materie]['Resources'] !== null)
-              for(let clasa of this.splitString(this.students[key][0]['ORAR'][day][days.get(day)][materii][materie]['Resources']))
+        for(let materii in this.professors[key][0]['ORAR'][day][days.get(day)]){
+          for(let materie in this.professors[key][0]['ORAR'][day][days.get(day)][materii])
+            if(this.professors[key][0]['ORAR'][day][days.get(day)][materii][materie]['Resources'] !== null)
+              for(let clasa of this.splitString(this.professors[key][0]['ORAR'][day][days.get(day)][materii][materie]['Resources']))
                 if(clasa !== "")  
                   elems.push(clasa);
         }
