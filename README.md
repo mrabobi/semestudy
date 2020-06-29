@@ -41,6 +41,7 @@
   * [Built With](#built-with)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
+* [Demo](#demo)
 * [Coordinating Teacher](#coordinating-teacher)
 * [License](#license)
 * [Contact](#contact)
@@ -53,7 +54,7 @@
 
 ![Demo with the application](MediaFiles/demo.gif)
 
-The project's meaning is to create a schedule for each education stage, be it university, highschool or primary. It is a flexible program wich allows the user to modify and view the result in real-time. Once the user is done and content with the outcome he can save the it in multiple ways(XML/PDF/JSON).
+The project's meaning is to create a schedule for each education stage, be it university, highschool or primary. It is a flexible program wich allows the user to modify and view the result in real-time. Once the user is done and content with the outcome he can save the it in multiple ways(XML/JSON).
 
 
 ### Built With
@@ -72,6 +73,9 @@ The project's meaning is to create a schedule for each education stage, be it un
 See the [open issues](https://github.com/mrabobi/semestudy/issues) for a list of proposed features (and known issues).
 
 
+##Demo
+
+[![IMAGE ALT TEXT HERE](https://i.imgur.com/deTJHQ7.png)](https://www.youtube.com/watch?v=Jn9pN1iEF2E&feature=youtu.be)
 
 
 
